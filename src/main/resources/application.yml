@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Artists app
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/artists_app
+    username: root
+    password: toor
+  jpa:
+    databasePlatform: org.hibernate.dialect.MySQL8Dialect
+    showSql: true
+    hibernate:
+      ddlAuto: create-drop
+    deferDatasourceInitialization: true
+  sql:
+    init:
+      mode: always
+logging:
+  level:
+    sql: debug
