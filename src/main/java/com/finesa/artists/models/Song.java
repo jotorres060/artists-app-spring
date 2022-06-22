@@ -8,22 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "artists")
-public class Artist {
+@Table(name = "songs")
+public class Song {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column(name = "name", length = 100, nullable = false)
 	private String name;
-	
-	@Column(name = "last_name", length = 100, nullable = false)
-	private String lastName;
-	
-	@Column(name = "gender", length = 100, nullable = false)
-	private String gender;
-	
+
+	@Column(name = "release_date", nullable = false)
+	private String releaseDate;
+
+	@Column(name = "album", length = 100, nullable = false)
+	private String album;
+
+	@Column(name = "likes", length = 100, nullable = false)
+	private Integer likes;
+
 	@Column(name = "created_at", nullable = false)
 	private String createdAt;
 
@@ -43,20 +46,28 @@ public class Artist {
 		this.name = name;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getReleaseDate() {
+		return releaseDate;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 
-	public String getGender() {
-		return gender;
+	public String getAlbum() {
+		return album;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setAlbum(String album) {
+		this.album = album;
+	}
+
+	public Integer getLikes() {
+		return likes;
+	}
+
+	public void setLikes(Integer likes) {
+		this.likes = likes;
 	}
 
 	public String getCreatedAt() {
